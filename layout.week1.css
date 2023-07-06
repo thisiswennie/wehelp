@@ -1,3 +1,5 @@
+body{ margin: 0; padding: 0; }
+
 .frame{
     display:flex;
     justify-content: center;
@@ -88,6 +90,7 @@
     .product{
         width: 45%;
         flex-grow: 1 ;
+        margin-bottom: 20px;
     }
     .list2{
         display: none;
