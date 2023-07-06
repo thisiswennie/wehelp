@@ -21,8 +21,6 @@ body{ margin: 0; padding: 0; }
     display: none;
 }
 
-
-
 .welcome{
     display:flex;
     justify-content: center;
