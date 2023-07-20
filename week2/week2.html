@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title> week 2 作業 JavaScript</title>
+    </head>
+    <body>
+        <script>
+        console.log("==Task 1==");
+            function findAndPrint(message) {
+                 for (let key in message) {
+                     const age = message[key].match(/\d+/); 
+    if (age && age > 17) { 
+        console.log(key);
+    }
+    if (message[key].includes("vote for")) {
+         console.log(key);
+    }
+    if (message[key].includes("college student")) {
+        console.log(key);
+    }
+    if (message[key].includes("legal age")) {
+        console.log(key);
+    }
+}
+}
+        
+            
+            findAndPrint({
+            "Bob":"My name is Bob. I'm 18 years old.",
+            "Mary":"Hello, glad to meet you.",
+            "Copper":"I'm a college student. Nice to meet you.",
+            "Leslie":"I am of legal age in Taiwan.",
+            "Vivian":"I will vote for Donald Trump next week",
+            "Jenny":"Good morning."
+            });
+        </script>
+
+    <script>
+        console.log("==Task 2==");
+        function calculateSumOfBonus(data) {
+        const USD_TO_TWD_EXCHANGE_RATE = 30;
+        const MAX_TOTAL_BONUS_TWD = 10000;
+
+        function calculateBonus(salary, performance, role) {
+        let bonus = 0;
+
+    if (role === "Engineer") {
+      if (performance === "above average") {
+        bonus = salary * 0.07;
+      } else if (performance === "average") {
+        bonus = salary * 0.06;
+      } else {
+        bonus = salary * 0.05;
+      }
+    } else if (role === "CEO") {
+      if (performance === "above average") {
+        bonus = salary * 0.09;
+      } else if (performance === "average") {
+        bonus = salary * 0.08;
+      } else {
+        bonus = salary * 0.07;
+      }
+    } else if (role === "Sales") {
+      if (performance === "above average") {
+        bonus = salary * 0.05;
+      } else if (performance === "average") {
+        bonus = salary * 0.04;
+      } else {
+        bonus = salary * 0.03;
+      }
+    }
+
+    return bonus;
+  }
+
+  let totalBonusTWD = 0;
+
+  for (let i = 0; i < data["employees"].length; i++) {
+    const employee = data["employees"][i];
+    let salary = employee["salary"];
+    if (typeof salary === "string") {
+      if (salary.includes("USD")) {
+        salary = parseInt(salary.replace("USD", ""));
+        salary *= USD_TO_TWD_EXCHANGE_RATE;
+      } else if (salary.includes(",")) {
+        salary = parseInt(salary.replace(",", ""));
+      }
+    }
+    const bonusTWD = calculateBonus(salary, employee["performance"], employee["role"]);
+    totalBonusTWD += bonusTWD;
+  }
+
+  console.log("Total bonus in TWD:", totalBonusTWD);
+}
+
+calculateSumOfBonus({
+  "employees": [
+    {
+      "name": "John",
+      "salary": "1000USD",
+      "performance": "above average",
+      "role": "Engineer"
+    },
+    {
+      "name": "Bob",
+      "salary": 60000,
+      "performance": "average",
+      "role": "CEO"
+    },
+    {
+      "name": "Jenny",
+      "salary": "50,000",
+      "performance": "below average",
+      "role": "Sales"
+    }
+  ]
+});
+
+        </script>
+    <script>
+        console.log("==Task3==");
+        function func(...data) {
+    // 第二字元的出現次數
+    let secondCharCounts = {};
+    // 紀錄名字第二個字出現次數為1的名字
+    let namesWithSecondCharOnce = [];
+
+   
+    for (const string of data) {
+        if (string.length >= 2) {
+            const secondChar = string[1];
+            secondCharCounts[secondChar] = (secondCharCounts[secondChar] || 0) + 1;
+        }
+    }
+
+    
+    for (const name of data) {
+        if (name.length > 1 && secondCharCounts[name[1]] === 1) {
+            namesWithSecondCharOnce.push(name);
+        }
+    }
+
+    
+    if (namesWithSecondCharOnce.length > 0) {
+        for (const name of namesWithSecondCharOnce) {
+            console.log(name);
+        }
+    } else {
+        console.log("沒有");
+    }
+}
+
+      func("彭⼤牆", "王明雅", "吳明"); // print 彭⼤牆
+      func("郭靜雅", "王立強", "林靜宜", "郭立恆", "林花花"); // print 林花花
+      func("郭宣雅", "林靜宜", "郭宣恆", "林靜花"); // print 沒有
+
+
+    </script>
+
+
+    <script>
+        console.log("==Task4==");
+
+        function getNumber(index) {
+        var number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"];
+        return number[index];
+}
+
+        console.log(getNumber(1));   // Output: 4
+        console.log(getNumber(5));   // Output: 10
+        console.log(getNumber(10));  // Output: 15
+
+        getNumber(1); // print 4
+        getNumber(5); // print 10
+        getNumber(10); // print 15       
+       </script>
+    </body>
+</html>
+
+
+
+
