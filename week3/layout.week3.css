@@ -78,9 +78,9 @@ body {
   }
   
   .list p {
-    margin: 0;
+    margin: 10px;
     flex: 1;
-    text-align: center; 
+    text-align: left; 
   }
   
   .list2 {
