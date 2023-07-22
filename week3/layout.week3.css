@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.left {
+    flex: none;
+    width: 200px;
+}
+
+.right {
+    display: block;
+    text-align: right;
+    flex: auto;
+}
+
+.mobile-menu {
+    text-align: right;
+    display: none;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: rgb(82, 152, 152);
+}
+
+.text {
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+}
+
+.list-container {
+    display: flex;
+    justify-content: center; /* 將內容水平置中 */
+    align-items: center; /* 將內容垂直置中 */
+    max-width: 1200px;
+    margin: 0 auto; /* 將容器水平置中 */
+}
+
+.list2-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    justify-content: center; /* 將內容水平置中 */
+    align-items: center; /* 將內容垂直置中 */
+    max-width: 1200px;
+    margin: 0 auto; /* 將容器水平置中 */
+}
+
+.list {
+    flex-wrap: wrap;
+    justify-content: space-between; /* Arrange items with equal space between them */
+    align-items: center;
+    width: 100%;
+    max-width: 376px; /* Adjust the maximum width based on your preference */
+    margin: 10px auto; /* Center the list */
+    background-color: skyblue;
+    height: 70px;
+    text-align: left;
+    
+  }
+  
+  .list img {
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .list p {
+    margin: 0;
+    flex: 1;
+    text-align: center; 
+  }
+  
+  .list2 {
+    display: grid; 
+    justify-items: center; 
+    width: 183px;
+    height: 180px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: skyblue;
+  }
+  
+  .list2 img {
+    width: 181px;
+    height: 110px;
+    object-fit: cover;
+  }
+
+  .image-with-text1{
+    display: flex;
+    align-items: center; /* 將圖片和文字在垂直方向上置中對齊 */
+    margin-bottom: 10px; /* 添加一些底部間距，讓版面看起來更好看 */
+}
+
+.image-with-text1 .list img {
+    flex: none; /* 防止圖片在彈性佈局中拉伸 */
+    width: 120px;
+    height: 72px;
+    object-fit: cover;
+    margin-right: 10px; /* 調整圖片和文字之間的間距 */
+}
+
+.image-with-text1 .list p {
+    flex: 1; /* 文字佔據剩餘的彈性空間 */
+    text-align: center; /* 將文字水平置中對齊 */
+    margin: 0; /* 清除<p>標籤的預設邊距 */
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width:1200px){
+    .list-container {
+        flex-wrap:wrap;
+        width: 90%;
+        margin: auto;
+    }
+    .list{
+        width: 45%;
+        flex-grow: 1 ;
+        margin: 10px;
+        max-width: 100%;
+        height: 70px;
+      }
+    .list2-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        justify-content: center; /* 將內容水平置中 */
+        align-items: center; /* 將內容垂直置中 */
+        margin: auto; /* 將容器水平置中 */
+        width: 90%;
+    }
+    .list2 {
+        justify-items: center; 
+        height: 220px;
+        width: calc(100% - 10px);
+        height: 220px;
+        margin: 5px;
+        text-align: center;
+      }
+      
+      .list2 img {
+        object-fit: cover;
+        height: 150px;
+        width: 100%;
+      }
+}
+
+@media (max-width:600px){
+    .list{
+        flex-wrap:wrap;
+    }
+    .right{
+        display:none;
+        text-align: right;
+        flex: auto;
+    }
+    
+    .mobile-menu{
+        text-align: right;
+        display: block;
+        flex: auto;
+    }
+    .product{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 20px;
+    }
+
+    .list{
+        width: 90%;
+        flex-wrap:wrap;
+      }
+      .list2-container {
+        display: flex;flex-wrap:wrap;
+        gap: 5px;
+        justify-content: center; /* 將內容水平置中 */
+        align-items: center; /* 將內容垂直置中 */
+        text-align: center;
+        margin: auto; /* 將容器水平置中 */
+        width: 90%;
+        
+    }
+    
+    .list2 {
+        background-color: skyblue;
+        height: 250px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .list2 img {
+        object-fit: cover;
+        background-position: center;
+        height: 200px;
+        width: 100%;
+      }
+}
