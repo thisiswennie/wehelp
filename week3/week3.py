@@ -11,7 +11,7 @@ clist = data["result"]["results"]
 
 jpg_urls = {}
 
-with open("attraction.txt", "w", encoding="utf-8") as file:
+with open("attraction.csv", "w", encoding="utf-8") as file:
     for item in clist:
         stitle = item["stitle"].strip()
         address = item["address"]
@@ -39,7 +39,7 @@ for item in clist:
         classified_data[station].append(stitle)
     else:
         classified_data[station] = [stitle]
-with open("mrt.txt", "w", encoding="utf-8") as file:
+with open("mrt.csv", "w", encoding="utf-8") as file:
     for station, stitle_list in classified_data.items():
         stitles_str = ",".join(stitle_list)  # 將景點名稱清單轉為以逗號分隔的字串
         file.write(f"{station},{stitles_str}"+ "\n")
