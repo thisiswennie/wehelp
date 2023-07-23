@@ -42,6 +42,6 @@ for item in clist:
 with open("mrt.csv", "w", encoding="utf-8") as file:
     for station, stitle_list in classified_data.items():
         stitles_str = ", ".join(stitle_list)  # 將景點名稱清單轉為以逗號分隔的字串
-        file.write(f"{station}: {stitles_str}"+ "\n")
+        file.write(f"{station}, {stitles_str}"+ "\n")
 
 
