@@ -163,26 +163,19 @@ calculateSumOfBonus({
     <script>
         console.log("==Task 4==");
 
-        function getNumber(index) {
-    let number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"];
-    return number[index];
-}
-
-let number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"];
-let result = [];
-
-for (let i = 0; i < number.length; i++) {
-    if (i % 2 === 0) {  // 偶數
-        result.push(parseInt(getNumber(i)) - 1);
-    } else {  // 奇數
-        result.push(parseInt(getNumber(i)) + 4);
+    function getNumber(index) {
+    if (index === 0) {  // 如果索引號為0
+        return 0;
+    } else if (index % 2 === 0) {  // 如果索引號是偶數
+        return Math.floor(3 * index / 2);
+    } else {  // 如果索引號是奇數
+        return Math.floor(3 * (index - 1) / 2) + 4;
     }
-      
 }
-
-    console.log(getNumber(1));   
-    console.log(getNumber(5));   
-    console.log(getNumber(10));   
+      
+console.log(getNumber(1));   
+console.log(getNumber(5));   
+console.log(getNumber(10));
 
 getNumber(1); // print 4 
 getNumber(5); // print 10 
