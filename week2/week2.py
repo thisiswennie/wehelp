@@ -128,20 +128,23 @@ func("郭宣雅", "林靜宜", "郭宣恆", "林靜花") # print 沒有
 
 print("==Task 4==")
 
-def get_number(index, number):
+def get_number(index):
+    number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"]
     return number[index]
 
-# 定義數列
 number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"]
-
 result = []
 
 for i in range(len(number)):
     if i % 2 == 0:  # 偶數
-        result.append(int(get_number(i, number)) - 1)
+        result.append(int(get_number(i)) - 1) #前一個奇數單位-1
     else:  # 奇數
-        result.append(int(get_number(i, number)) + 4)
+        result.append(int(get_number(i)) + 4) #前一個偶數單位+4
 
-print(get_number(1, number))   # Output: 4
-print(get_number(5, number))   # Output: 10
-print(get_number(10, number))  # Output: 15
+print(get_number(1))   # Output: 4
+print(get_number(5))   # Output: 10
+print(get_number(10))  # Output: 15
+
+get_number(1) # print 4
+get_number(5) # print 10 
+get_number(10) # print 15

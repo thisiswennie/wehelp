@@ -163,25 +163,30 @@ calculateSumOfBonus({
     <script>
         console.log("==Task 4==");
 
-function getNumber(index, number) {
+        function getNumber(index) {
+    let number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"];
     return number[index];
 }
 
 let number = ["0", "4", "3", "7", "6", "10", "9", "13", "12", "16", "15"];
-
 let result = [];
 
 for (let i = 0; i < number.length; i++) {
     if (i % 2 === 0) {  // 偶數
-        result.push(parseInt(getNumber(i, number)) - 1);
+        result.push(parseInt(getNumber(i)) - 1);
     } else {  // 奇數
-        result.push(parseInt(getNumber(i, number)) + 4);
+        result.push(parseInt(getNumber(i)) + 4);
     }
+      
 }
 
-    console.log(getNumber(1, number));   // Output: 4
-    console.log(getNumber(5, number));   // Output: 10
-    console.log(getNumber(10, number));  // Output: 15
+    console.log(getNumber(1));   
+    console.log(getNumber(5));   
+    console.log(getNumber(10));   
+
+getNumber(1); // print 4 
+getNumber(5); // print 10 
+getNumber(10); // print 15
 
        </script>
     </body>
