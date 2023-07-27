@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wehelp第三週作業</title>
+</head>
+
+<body>
+    <body style="margin: 0; padding: 0;"></body>
+
+    <h1 style="height:60px;padding:20px;font-size:normal;margin:none;color:white;background-color:black;text-align:center"> 歡迎光臨，請輸入帳號密碼 </h1>
+    
+    <div style="width: none;font-size:normal;margin:0 auto;color:black;line-height: 35px;text-align:center;">
+        <div style="font-weight:bold;">登入系統</div>
+        <form id="loginForm" action="{{ url_for('signin') }}" method="POST">
+            <div>帳號&nbsp<input type="text" placeholder="請輸入帳號" name="test_account" id="accountInput"/></div>
+            <div>密碼&nbsp<input type="password" placeholder="請輸入密碼" name="test_password" id="passwordInput"/></div>
+            <div>同意條款<input type="checkbox" id="agreeCheckbox" /></div>
+
+            <input type="submit" value="登入" onclick="return validateForm();">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var agreeCheckbox = document.getElementById("agreeCheckbox");
+
+            if (!agreeCheckbox.checked) {
+                alert("請先同意條款後才能登入。");
+                return false; // 阻止表單提交
+            }
+
+            // 如果方塊已勾選，允許表單提交
+            return true;
+        }
+    </script>
+</body>
+</html>
