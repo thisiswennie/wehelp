@@ -28,10 +28,10 @@
 
             if (!agreeCheckbox.checked) {
                 alert("請先同意條款後才能登入。");
-                return false; // 阻止表單提交
+                return false; // 沒打勾不能進下一步
             }
 
-            // 如果方塊已勾選，允許表單提交
+            // 當方塊打勾才允許表單送出
             return true;
         }
     </script>
